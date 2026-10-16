@@ -43,6 +43,23 @@ void insertLast_108072500034(List &L, address p) {
     }
 }
 
+void deleteFirst_108072500034(List &L, address &p) {
+    if (!isEmpty_108072500034(L)) {
+        p = L.first;
+        if (L.first == L.last) {
+            L.first = nullptr;
+            L.last = nullptr;
+        } else {
+            L.first = p->next;
+            L.first->prev = nullptr;
+        }
+        p->next = nullptr;
+        p->prev = nullptr;
+    } else {
+        p = nullptr;
+    }
+}
+
 void deleteLast_108072500034(List &L, address &p) {
     if (!isEmpty_108072500034(L)) {
         p = L.last;
@@ -79,20 +96,26 @@ void printInfoFrontToBack_108072500034(List L) {
     } else {
         address P = L.first;
         while (P != nullptr) {
-            cout << P->info << ", ";
+            cout << P->info;
+            if (P->next != nullptr) { // comma issue
+                cout << ", ";
+            }
             P = P->next;
         }
         cout << endl;
     }
 }
 
-void printInfoFrontToFront_108072500034(List L) {
+void printInfoBackToFront_108072500034(List L) {
     if (isEmpty_108072500034(L)) {
         cout << "Empty list" << endl;
     } else {
         address P = L.last;
         while (P != nullptr) {
-            cout << P->info << ", ";
+            cout << P->info;
+            if (P->prev != nullptr) {
+                cout << ", ";
+            }
             P = P->prev;
         }
         cout << endl;

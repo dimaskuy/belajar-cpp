@@ -9,12 +9,12 @@ typedef struct elmlist {
     infotype info;
     address next;
     address prev;
-};
+} elmlist;
 
-struct List {
+typedef struct List {
     address first;
     address last;
-};
+} List;
 
 void createList_108072500034(List &L);
 bool isEmpty_108072500034(List L);
@@ -27,5 +27,5 @@ void deleteFirst_108072500034(List &L, address &p);
 void deleteLast_108072500034(List &L, address &p);
 
 void printInfoFrontToBack_108072500034(List L);
-void printInfoFrontToFront_108072500034(List L);
+void printInfoBackToFront_108072500034(List L);
 #endif
