@@ -16,16 +16,18 @@ typedef struct List {
     address last;
 } List;
 
-void createList_108072500034(List &L);
-bool isEmpty_108072500034(List L);
-address allocate_108072500034(infotype x);
-void printInfo_108072500034(List L);
+void createList(List &L);
+bool isEmpty(List L);
+address allocate(infotype x);
+void insertFirst(List &L, address p);
+void insertLast(List &L, address p);
+void insertAfter(List &L, address prec, address p);
+void deleteFirst(List &L, address &p);
+void deleteLast(List &L, address &p);
+void deleteAfter(List &L, address prec, address &p);
+void deleteBefore(List &L, address succ, address &p);
+void printInfo(List L);
+void deleteByValue(List &L, infotype x);
+void reverseList(List &L);
 
-void insertFirst_108072500034(List &L, address p);
-void insertLast_108072500034(List &L, address p);
-void deleteFirst_108072500034(List &L, address &p);
-void deleteLast_108072500034(List &L, address &p);
-
-void printInfoFrontToBack_108072500034(List L);
-void printInfoBackToFront_108072500034(List L);
 #endif
