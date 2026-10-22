@@ -1,5 +1,5 @@
-#ifndef DLL_H
-#define DLL_H
+#ifndef STACK_H
+#define STACK_H
 #include <iostream>
 
 const int MAXSTACK = 10;
